@@ -1,10 +1,19 @@
+import React from "react";
+
+import { Provider } from "react-redux";
+
+import { store } from "./store/store";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { TextField } from "@mui/material";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./global.css";
 
 import AppRoutes from "./Routes";
+
+import { Loading } from "./view/components";
 
 const theme = createTheme({
   palette: {
@@ -27,9 +36,12 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <AppRoutes />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Loading />
+        <AppRoutes />
+      </ThemeProvider>
+    </Provider>
   );
 }
 
