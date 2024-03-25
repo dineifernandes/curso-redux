@@ -1,3 +1,6 @@
+*{
+    outline: none !important;
+}
 .outline-none{
     outline: none !important;
     }

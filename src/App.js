@@ -13,7 +13,7 @@ import "./global.css";
 
 import AppRoutes from "./Routes";
 
-import { Loading } from "./view/components";
+import { Loading, Notify, Alert } from "./view/components";
 
 const theme = createTheme({
   palette: {
@@ -38,6 +38,8 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
+        <Notify />
+        <Alert />
         <Loading />
         <AppRoutes />
       </ThemeProvider>
