@@ -2,11 +2,21 @@ import React from "react";
 
 import { change, login } from "../../store/actions/auth.action";
 
-import { Typography, TextField, Button } from "@mui/material";
+import { Typography, TextField, Button, withStyles } from "@mui/material";
 
 import { useSelector, useDispatch } from "react-redux";
 
 import { Navigate } from "react-router-dom";
+
+const RegisterButton = withStyles({
+  root: {
+    color: "#fff",
+    backgroundColor: "#28a745",
+    "&:hover": {
+      backgroundColor: "#218838",
+    },
+  },
+});
 
 export default function Auth() {
   const dispatch = useDispatch();

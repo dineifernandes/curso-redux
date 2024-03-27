@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 
 const Home = lazy(() => import("./Home"));
-const Cadastro = lazy(() => import("./Cadastro"));
 const Auth = lazy(() => import("./view/auth"));
+const Register = lazy(() => import("./view/register"));
 
 const AppRoutes = () => (
   <Router>
@@ -18,6 +18,7 @@ const AppRoutes = () => (
     >
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/" element={<Auth />} />
       </Routes>
