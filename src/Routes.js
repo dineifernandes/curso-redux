@@ -5,7 +5,7 @@ import { CircularProgress } from "@mui/material";
 
 const Home = lazy(() => import("./Home"));
 const Cadastro = lazy(() => import("./Cadastro"));
-const Login = lazy(() => import("./Login"));
+const Auth = lazy(() => import("./view/auth"));
 
 const AppRoutes = () => (
   <Router>
@@ -17,9 +17,9 @@ const AppRoutes = () => (
       }
     >
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Auth />} />
+        <Route path="/" element={<Auth />} />
       </Routes>
     </Suspense>
   </Router>
