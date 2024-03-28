@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import PrivateRoute from "./hooks/auth";
+
 import { CircularProgress } from "@mui/material";
 
 const Home = lazy(() => import("./Home"));
@@ -17,10 +19,19 @@ const AppRoutes = () => (
       }
     >
       <Routes>
-        <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/" element={<Auth />} />
+
+        <Route
+          exact
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Suspense>
   </Router>
