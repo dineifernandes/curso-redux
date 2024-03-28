@@ -5,7 +5,7 @@ import PrivateRoute from "./hooks/auth";
 
 import { CircularProgress } from "@mui/material";
 
-const Home = lazy(() => import("./Home"));
+const Home = lazy(() => import("./view/home"));
 const Auth = lazy(() => import("./view/auth"));
 const Register = lazy(() => import("./view/register"));
 
